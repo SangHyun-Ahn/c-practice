@@ -11,6 +11,8 @@ CMainApp::CMainApp()
 
 
 
+
+
 CMainApp* CMainApp::Create()
 {
 	CMainApp* pInstance = new CMainApp();
