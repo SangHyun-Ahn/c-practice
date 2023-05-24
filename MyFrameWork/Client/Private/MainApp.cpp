@@ -9,6 +9,8 @@ CMainApp::CMainApp()
 	Safe_AddRef(m_pGameInstance);
 }
 
+
+
 CMainApp* CMainApp::Create()
 {
 	CMainApp* pInstance = new CMainApp();
