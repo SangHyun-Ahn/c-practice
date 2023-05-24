@@ -2,6 +2,7 @@
 #include "Client_Define.h"
 #include "Base.h"
 // 전방선언 (엔진프로젝트의 게임인스턴스)
+
 BEGIN(Engine)
 class CGameInstance; 
 END
