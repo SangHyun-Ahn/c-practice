@@ -14,6 +14,7 @@ private:
 	virtual ~CMainApp() = default;
 
 
+
 public: 
 	HRESULT Initialize();
 	void Tick(_float _fDeltaTime);
