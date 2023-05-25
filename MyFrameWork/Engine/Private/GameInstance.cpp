@@ -10,7 +10,9 @@ CGameInstance::CGameInstance()
 	: m_pGraphic_Device{ CDevice::Get_Instance() }
 	, m_pLevel_Manager{ CLevel_Manager::Get_Instance() }
 	, m_pObject_Manager{ CObject_Manager::Get_Instance() }
+	, m_pComponent_Manager{ CComponent_Manager::Get_Instance() }
 {
+	Safe_AddRef(m_pComponent_Manager);
 	Safe_AddRef(m_pObject_Manager);
 	Safe_AddRef(m_pLevel_Manager);
 	Safe_AddRef(m_pGraphic_Device);
@@ -33,7 +35,8 @@ HRESULT CGameInstance::Initialize_Engine(_uint iNumLevels, const GRAPHICDESC& Gr
 void CGameInstance::Tick_Engine(_float _fDeltaTime)
 {
 	if (m_pLevel_Manager == nullptr ||
-		m_pObject_Manager == nullptr)
+		m_pObject_Manager == nullptr ||
+		m_pComponent_Manager == nullptr )
 		return;
 
 	m_pObject_Manager->Tick(_fDeltaTime);
@@ -99,6 +102,8 @@ void CGameInstance::Release_Engine()
 	
 	CObject_Manager::Get_Instance()->Destroy_Instance();
 
+	CComponent_Manager::Get_Instance()->Destroy_Instance();
+
 	CLevel_Manager::Get_Instance()->Destroy_Instance();
 
 	CDevice::Get_Instance()->Destroy_Instance();
@@ -107,6 +112,7 @@ void CGameInstance::Release_Engine()
 
 void CGameInstance::Free()
 {
+	Safe_Release(m_pComponent_Manager);
 	Safe_Release(m_pObject_Manager);
 	Safe_Release(m_pLevel_Manager);
 	Safe_Release(m_pGraphic_Device);

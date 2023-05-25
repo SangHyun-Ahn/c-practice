@@ -1,5 +1,6 @@
 #pragma once
-#include "Base.h"
+
+#include "Component_Manager.h"
 
 BEGIN(Engine)
 class ENGINE_DLL CGameInstance final : public CBase
@@ -33,6 +34,8 @@ private:
 	class CDevice*		  m_pGraphic_Device = { nullptr };
 	class CLevel_Manager* m_pLevel_Manager = { nullptr };
 	class CObject_Manager* m_pObject_Manager = { nullptr };
+	class CComponent_Manager* m_pComponent_Manager = { nullptr };
+
 public:
 	static void Release_Engine();
 	virtual void Free() override;

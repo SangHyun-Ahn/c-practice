@@ -43,6 +43,9 @@
     <Filter Include="01. Utility\03. Component\VIBuffer\Rect">
       <UniqueIdentifier>{edf02524-19bf-4e50-8c86-e299398352b3}</UniqueIdentifier>
     </Filter>
+    <Filter Include="01. Utility\03. Component\Manager">
+      <UniqueIdentifier>{d812d1e4-0046-4d97-a7d1-df304132e302}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Private\Base.cpp">
@@ -77,6 +80,9 @@
     </ClCompile>
     <ClCompile Include="..\Private\VIBuffer_Rect.cpp">
       <Filter>01. Utility\03. Component\VIBuffer\Rect</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Private\Component_Manager.cpp">
+      <Filter>01. Utility\03. Component\Manager</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -127,6 +133,9 @@
     </ClInclude>
     <ClInclude Include="..\Public\VIBuffer_Rect.h">
       <Filter>01. Utility\03. Component\VIBuffer\Rect</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Public\Component_Manager.h">
+      <Filter>01. Utility\03. Component\Manager</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
